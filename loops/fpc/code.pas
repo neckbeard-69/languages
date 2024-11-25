@@ -1,4 +1,4 @@
-program Loops;
+program LoopsPascal;
 
 uses
   SysUtils;
