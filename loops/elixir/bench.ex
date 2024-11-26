@@ -15,10 +15,6 @@ defmodule Bench do
   # This is the outer loop via recursion
 
   defp inner_loop(cli_num) do
-    inner_loop_body(0, 0, cli_num)
-  end
-
-  defp inner_loop_body(0, 0, cli_num) do
     inner_loop_body(1, 0, cli_num)
   end
 
@@ -28,7 +24,7 @@ defmodule Bench do
     inner_loop_body(i + 1, rem(i, cli_num) + acc, cli_num)
   end
 
-  defp inner_loop_body(_, acc, _) do
+  defp inner_loop_body(100_000, acc, _) do
     acc
   end
 
@@ -52,7 +48,7 @@ defmodule Bench do
     outer_loop_body(i + 1, Tuple.insert_at(acc, i, val), random_num, cli_num)
   end
 
-  defp outer_loop_body(_, acc, _, _) do
+  defp outer_loop_body(10_000, acc, _, _) do
     acc
   end
 end
