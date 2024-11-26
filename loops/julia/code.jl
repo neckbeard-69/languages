@@ -4,7 +4,7 @@ let
     r = only(rand(1:10^4,1))
     @inbounds for i ∈ 1:10^4
         @inbounds for j ∈ 1:10^5
-            a[i] = a[i] + u
+            a[i] = a[i] + j%u 
         end
         a[i] = a[i] + r
     end
