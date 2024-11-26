@@ -1,7 +1,7 @@
 defmodule Bench do
   def run do
     # Get an input number from the command line
-    {cliNum, ""} = Integer.parse(Enum.at(System.argv(), 0))
+    {cli_num, ""} = Integer.parse(Enum.at(System.argv(), 0))
 
     # Get a random number 0 <= r < 10k
     random_num = 0..10_000 |> Enum.random()
