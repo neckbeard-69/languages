@@ -1,23 +1,15 @@
 defmodule Bench do
   def run do
-    {cli_num, ""} = Integer.parse(Enum.at(System.argv(), 0))
-
+    cli_num = System.argv() |> Enum.at(0) |> String.to_integer()
     fib_res = sum_fibs(cli_num)
-
     IO.puts(fib_res)
   end
 
-  def fib(0), do: 0
-  def fib(1), do: 1
-  def fib(n), do: fib(n - 1) + fib(n - 2)
+  defp sum_fibs(i \\ 0, max, total \\ 0)
+  defp sum_fibs(i, max, total) when i < max, do: sum_fibs(i + 1, max, total + fib(i))
+  defp sum_fibs(_i, _max, total), do: total
 
-  def sum_fibs(n), do: sum_range(0, 0, n)
-
-  defp sum_range(0, 0, n), do: sum_range(1, 0, n)
-
-  defp sum_range(i, acc, n) when i < n do
-    sum_range(i + 1, acc + fib(i), n)
-  end
-
-  defp sum_range(_, acc, _), do: acc
+  defp fib(0), do: 0
+  defp fib(1), do: 1
+  defp fib(n), do: fib(n - 1) + fib(n - 2)
 end
