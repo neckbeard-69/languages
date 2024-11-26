@@ -1,5 +1,3 @@
-import Foundation
-
 let u = Int(CommandLine.arguments[1])!  // Get input number from command line
 let r = Int.random(in: 0..<10000)  // Get random number 0 <= r < 10k
 var a = Array(repeating: 0, count: 10000)  // Array of 10k elements initialized to 0
