@@ -6,7 +6,7 @@ var a = Array(repeating: 0, count: 10000)  // Array of 10k elements initialized 
 
 for i in 0..<10000 {  // 10k outer loop iterations
     for j in 0..<100000 {  // 100k inner loop iterations
-        a[i] = a[i] + j % u  // Simple sum
+        a[i] += j % u  // Simple sum
     }
     a[i] += r  // Add random value to each element
 }
