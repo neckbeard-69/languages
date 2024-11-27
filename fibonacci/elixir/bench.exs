@@ -9,8 +9,9 @@ defmodule Bench do
   defp sum_fibs(i, max, total) when i == max, do: total
   defp sum_fibs(i, max, total), do: sum_fibs(i + 1, max, total + fib(i))
 
-  defp fib(n) when n <= 1, do: n
-  defp fib(n), do: fib(n - 1) + fib(n - 2)
+  defp fib(n, current \\ 0, next \\ 1)
+  defp fib(n, current, _next) when n == 0, do: current
+  defp fib(n, current, next), do: fib(n - 1, next, current + next)
 end
 
 Bench.run()
