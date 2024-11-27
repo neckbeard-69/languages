@@ -9,7 +9,7 @@ defmodule Bench do
     result = outer_loop(random_num, input)
 
     # Print a single element of the array
-    IO.puts(Enum.at(result, random_num))
+    IO.puts(Enum.at(result, 10_000 - random_num))
   end
 
   # 100k simple sum iterations, per outer loop iteration
