@@ -20,8 +20,8 @@ procedure Code is
    R : Integer := 0;
 
 begin
-   for I in 1 .. U loop
-      R := R + Fibonacci (I);
+   for I in 1 .. U-1 loop
+      R := @ + Fibonacci (I);
    end loop;
 
    Put_Line (R'Image);
