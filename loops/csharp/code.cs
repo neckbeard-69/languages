@@ -9,7 +9,7 @@ for (var i = 0; i < a.Length; i++)
 {
     for (var j = 0; j < 100_000; j++)
     {
-        a[i] = a[i] + j % u;
+        a[i] += j % u;
     }
     a[i] += r;
 }
