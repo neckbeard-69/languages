@@ -10,7 +10,7 @@ main :: proc() {
     r := rand.int_max(10000)      // Get a random number 0 <= r < 10k
     a := [10000]int{}             // Array of 10k elements initialized to 0
 
-    for i in 0..<len(a) {         // 10k outer loop iterations
+    for i in 0..<10000 {         // 10k outer loop iterations
         for j in 0..<100000 {     // 100k inner loop iterations, per outer loop iteration
             a[i] += j % u         // Simple sum
         }
