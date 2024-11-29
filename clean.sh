@@ -4,4 +4,6 @@ rm jvm/code.class
 rm -r rust/target
 rm -rf kotlin/code.jar
 rm dart/code
+rm lua/code
+rm -f swift/code
 rm haxe/code.jar
