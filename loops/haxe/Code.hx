@@ -5,12 +5,11 @@ class Code {
 		var u:Int = Std.parseInt(Sys.args()[0]); // Command line input number
 		var r:Int = Std.random(10000);
 		var a = new Vector<Int>(10000); // Initialize a vector with 10,000 elements
+		#if !java
+		a.fill(0); // Fill VectorData to 0, this part is unnecessary since the JVM target already fills the values with 0.
+		#end
 
 		for (i in 0...10000) { // Outer loop with 10k iterations
-			#if !java
-			a[i] = 0; // Set all VectorData to 0, this part is unnecessary since the JVM target already fills the values with 0.
-			#end
-			
 			for (j in 0...100000) { // 100k inner loop iterations
 				a[i] = a[i] + j % u; // Simple sum operation
 			}
