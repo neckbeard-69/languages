@@ -19,10 +19,10 @@ begin
 
    for I in 1 .. 10000 loop
       for J in 0 .. 99999 loop
-         A (I) := A (I) + J rem U;
+         A (I) := A (I) + (J rem U);
       end loop;
 
-      A (I) := @ + R;
+      A (I) := A (I) + R;
    end loop;
 
    Put_Line (A (R)'Image);
