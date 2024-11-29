@@ -5,6 +5,7 @@ RUSTFLAGS="-Zlocation-detail=none" cargo +nightly build --manifest-path rust/Car
 kotlinc -include-runtime kotlin/code.kt -d kotlin/code.jar
 #kotlinc-native -include-runtime kotlin/code.kt -d kotlin/code
 dart compile exe dart/code.dart -o dart/code --target-os=macos
+clang -framework Foundation objc/code.m -o code
 gfortran -O3 fortran/code.f90 -o fortan/code
 zig build-exe -O ReleaseFast -femit-bin=zig/code zig/code.zig
 luajit -b lua/code.lua lua/code
