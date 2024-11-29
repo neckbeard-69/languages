@@ -10,7 +10,7 @@ def fibonacci(n):
 def main():
     u = int(sys.argv[1])
     r = 0
-    for i in range(u):
+    for i in range(1, u):
       r += fibonacci(i)
     print(r)
 
