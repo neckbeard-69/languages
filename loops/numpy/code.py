@@ -14,6 +14,5 @@ def main():
     a = np.full(10000, inner_sum, dtype=object)  # Start with the inner sum
     a += r  # Add the random number `r` to all elements
 
-    # Print the value at index `r`
-    print(a[r])
+    print(a[r]) # Print out a single element from the arra
 main()
