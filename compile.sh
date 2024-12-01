@@ -5,6 +5,7 @@ cargo build --manifest-path rust/Cargo.toml --release
 kotlinc -include-runtime kotlin/code.kt -d kotlin/code.jar
 #kotlinc-native -include-runtime kotlin/code.kt -d kotlin/code
 dart compile exe dart/code.dart -o dart/code --target-os=macos
+fpc -O3 fpc/code.pas
 crystal build -o crystal/code --release crystal/code.cr
 gnatmake -O3 -gnat2022 -gnatp -flto ada/code.adb -D ada -o ada/code
 scala-cli --power package scala/code.scala -f -o scala/code
