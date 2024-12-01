@@ -14,6 +14,7 @@ function run {
 run "Ruby YJIT" "miniruby --yjit ./ruby/code.rb 40"
 run "Kotlin" "java -jar kotlin/code.jar 40"
 run "C" "./c/code 40"
+run "CPP" "./cpp/code 40"
 run "Go" "./go/code 40"
 run "Rust" "./rust/target/release/code 40"
 run "Node" "node ./js/code.js 40"
