@@ -13,4 +13,6 @@ rm fortran/code
 rm zig/code
 rm lua/code
 rm -f swift/code
+rm -rf csharp-aot
+rm -rf csharp
 rm haskell/code haskell/*.hi haskell/*.o

@@ -15,4 +15,6 @@ gfortran -O3 fortran/code.f90 -o fortan/code
 zig build-exe -O ReleaseFast -femit-bin=zig/code zig/code.zig
 luajit -b lua/code.lua lua/code
 swiftc -O -parse-as-library -Xcc -funroll-loops -Xcc -march=native -Xcc -ftree-vectorize -Xcc -ffast-math swift/code.swift -o swift/code
+dotnet publish csharp/csharp.csproj -o csharp-aot /p:PublishAot=true
+dotnet publish csharp/csharp.csproj -o csharp
 ghc -O2 -fllvm haskell/code.hs -o haskell/code || { echo "ghc: cannot compile with llvm backend; fallback to use default backend"; ghc -O2 haskell/code.hs -o haskell/code; }
