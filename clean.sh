@@ -4,6 +4,7 @@ rm jvm/code.class
 rm -r rust/target
 rm -rf kotlin/code.jar
 rm dart/code
+rm nim/code
 rm js/bun
 rm common-lisp/code
 rm fpc/code

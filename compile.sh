@@ -9,6 +9,7 @@ cargo build --manifest-path rust/Cargo.toml --release
 kotlinc -include-runtime kotlin/code.kt -d kotlin/code.jar
 #kotlinc-native -include-runtime kotlin/code.kt -d kotlin/code
 dart compile exe dart/code.dart -o dart/code --target-os=macos
+nim c -d:danger --opt:speed nim/code.nim
 sbcl --noinform --non-interactive --load "common-lisp/code.lisp" --build
 fpc -O3 fpc/code.pas
 crystal build -o crystal/code --release crystal/code.cr
