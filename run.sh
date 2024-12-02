@@ -1,14 +1,7 @@
-function runOnce  {
-  { /usr/bin/time env $3 $2 ; } 2> /tmp/o 1> /dev/null
-  printf "$1 = "
-  cat /tmp/o | awk -v N=1 '{print $N"s"}'
-}
-
 function run {
   echo ""
-  runOnce "$1" "$2" "$3"
-  runOnce "$1" "$2" "$3"
-  runOnce "$1" "$2" "$3"
+  echo "Benchmarking $1"
+  hyperfine -i --shell=none --runs 3 --warmup 2 "$2"
 }
 
 run "Ruby YJIT" "miniruby --yjit ./ruby/code.rb 40"
