@@ -2,6 +2,7 @@ clang -O3 c/code.c -o c/code
 clang++ -std=c++23 -march=native -O3 -Ofast -o cpp/code cpp/code.cpp
 go build -ldflags "-s -w" -o go/code go/code.go
 javac jvm/code.java
+bun build --bytecode --compile js/code.js --outfile js/bun
 native-image -O3 jvm.code
 RUSTFLAGS="-Zlocation-detail=none" cargo +nightly build --manifest-path rust/Cargo.toml --release
 cargo build --manifest-path rust/Cargo.toml --release
