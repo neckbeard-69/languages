@@ -19,7 +19,7 @@
 
        PROCEDURE DIVISION.
        MAIN-PROCESS.
-           COMPUTE INPUT-NUMBER = FUNCTION RANDOM * 10000
+           Accept INPUT-NUMBER from command-line 
            COMPUTE RANDOM-NUMBER = FUNCTION RANDOM * 10000
 
       * Outer loop: 10,000 iterations
