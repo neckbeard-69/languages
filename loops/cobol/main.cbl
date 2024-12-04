@@ -35,7 +35,7 @@
 
       * Retrieve and print the element at the random index
            MOVE ELEMENT OF ARRAY (RANDOM-NUMBER + 1) TO ELEMENT-RESULT
-           DISPLAY "Element " RANDOM-NUMBER ": " ELEMENT-RESULT
+           DISPLAY ELEMENT-RESULT
            STOP RUN.
 
        END PROGRAM looopy.
