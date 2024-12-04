@@ -1,21 +1,36 @@
 import sys
 import numpy as np
 
+
+def fibonacci(n, fib_array):
+    # If the Fibonacci number has already been calculated, return it
+    if fib_array[n] != -1:
+        return fib_array[n]
+
+    # Base cases
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        # Recursive computation
+        fib_array[n] = fibonacci(n - 1, fib_array) + fibonacci(n - 2, fib_array)
+
+    return fib_array[n]
+
+
 def main():
     u = int(sys.argv[1])
 
-    # Generate Fibonacci numbers iteratively
-    if u <= 1:
-        print(0)
-        return None
+    # Initialize a NumPy array with -1 (indicating uncomputed Fibonacci values)
+    fib_array = np.full(u, -1, dtype=np.int64)
 
-    fib = np.zeros(u, dtype=np.int64)  # Initialize array for Fibonacci numbers
-    fib[1] = 1  # Set the first Fibonacci number
+    # Calculate the sum of Fibonacci numbers from F(1) to F(u-1)
+    r = 0
+    for i in range(1, u):
+        r += fibonacci(i, fib_array)
 
-    for i in range(2, u):
-        fib[i] = fib[i - 1] + fib[i - 2]
-
-    # Sum the Fibonacci numbers
-    r = np.sum(fib[1:])  # Exclude the 0th Fibonacci number for consistency
     print(r)
+
+
 main()
