@@ -19,6 +19,8 @@ rm zig/code
 rm lua/code
 rm -f swift/code
 rm haxe/code.jar
-rm -rf csharp-aot/code
+rm -rf csharp/code-aot
 rm -rf csharp/code
+rm -rf fsharp/code-aot
+rm -rf fsharp/code
 rm haskell/code haskell/*.hi haskell/*.o
