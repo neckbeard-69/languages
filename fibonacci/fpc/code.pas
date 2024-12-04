@@ -3,18 +3,14 @@ program FibonacciPascal;
 uses
   SysUtils;
 
-function Fibonacci(n: Int32): Int32;
+function Fibonacci(n: UInt32): UInt32; inline;
 begin
-  if n = 0 then
-    Fibonacci := 0
-  else if n = 1 then
-    Fibonacci := 1
-  else
-    Fibonacci := Fibonacci(n - 1) + Fibonacci(n - 2);
+  if n <= 1 then exit(n);
+  Fibonacci := Fibonacci(n - 1) + Fibonacci(n - 2);
 end;
 
 var
-  u, r, i: Int32;
+  u, r, i: UInt32;
 begin
   u := StrToInt(ParamStr(1));
   r := 0;
