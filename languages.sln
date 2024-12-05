@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fibonacci", "fibonacci", "{B5727360-3521-41B2-A71C-D6F03714DCE5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp", "fibonacci\csharp\csharp.csproj", "{50D6FCC8-9F4C-4277-9BD8-95CB5711425C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "loops", "loops", "{7DCD4FF2-5018-4D15-8F9E-D9C1A613C11D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp", "loops\csharp\csharp.csproj", "{5ABB4FF7-E9E3-4E76-9928-DD4BBF45366E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50D6FCC8-9F4C-4277-9BD8-95CB5711425C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D6FCC8-9F4C-4277-9BD8-95CB5711425C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D6FCC8-9F4C-4277-9BD8-95CB5711425C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D6FCC8-9F4C-4277-9BD8-95CB5711425C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABB4FF7-E9E3-4E76-9928-DD4BBF45366E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABB4FF7-E9E3-4E76-9928-DD4BBF45366E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABB4FF7-E9E3-4E76-9928-DD4BBF45366E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABB4FF7-E9E3-4E76-9928-DD4BBF45366E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50D6FCC8-9F4C-4277-9BD8-95CB5711425C} = {B5727360-3521-41B2-A71C-D6F03714DCE5}
+		{5ABB4FF7-E9E3-4E76-9928-DD4BBF45366E} = {7DCD4FF2-5018-4D15-8F9E-D9C1A613C11D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BB272F7-7620-4795-897D-CD268A70BBB8}
+	EndGlobalSection
+EndGlobal
