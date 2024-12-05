@@ -12,5 +12,5 @@ void main (string[] args) {
       a[i] += j%u;               // Simple sum
     a[i] += r;                         // Add a random value to each element in array
   }
-  writeln(a[r]);                // Prulong out a single element from the array
+  writeln(a[r]);                // Print out a single element from the array
 }
