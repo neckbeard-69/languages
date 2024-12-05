@@ -10,7 +10,7 @@ kotlinc -include-runtime kotlin/code.kt -d kotlin/code.jar
 #kotlinc-native -include-runtime kotlin/code.kt -d kotlin/code
 dart compile exe dart/code.dart -o dart/code --target-os=macos
 cd inko && inko build --opt=aggressive code.inko -o code && cd ..
-nim c -d:danger --opt:speed nim/code.nim
+nim c -d:danger --opt:speed -d:passC -x:off -a:off nim/code.nim
 sbcl --noinform --non-interactive --load "common-lisp/code.lisp" --build
 fpc -O3 fpc/code.pas
 crystal build -o crystal/code --release crystal/code.cr
