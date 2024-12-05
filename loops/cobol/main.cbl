@@ -9,7 +9,7 @@
        01 RANDOM-NUMBER             PIC 9(06) VALUE zero.
       * Array of 10,000 elements
        01 ARRAY                     OCCURS 10000 TIMES INDEXED BY IDX.
-           05 ELEMENT               PIC S9(09) COMP VALUE ZERO.
+           05 ELEMENT               PIC S9(10) COMP VALUE ZERO.
       * Loop counters
        01 I                         PIC 9(05) VALUE 1.
        01 J                         PIC 9(06) VALUE 1.
