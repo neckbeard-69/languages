@@ -3,6 +3,7 @@ rm go/code
 rm jvm/code.class
 rm -r rust/target
 rm -rf kotlin/code.jar
+rm kotlin/code.kexe
 rm dart/code
 rm -rf inko/build inko/code
 rm nim/code
@@ -23,3 +24,4 @@ rm -rf csharp-aot/code
 rm -rf csharp/code
 rm haskell/code haskell/*.hi haskell/*.o
 rm -f chez/code.so
+rm -rf clojure/classes clojure/.cpcache
