@@ -16,15 +16,26 @@ To run one of the benchmarks:
   You should see output something like:
   
   ```
-  $ bash ../run.sh
-  C = 0.77
-  Go = 2.07
-  Node = 0.79
-  Bun = 0.83
-  Deno = 1.13
-  PyPy = 1.61
-  Java = 0.64
-  $
+  $ ../run.sh
+
+  Benchmarking Zig
+  Benchmark 1: ./zig/code 40
+    Time (mean ± σ):     513.9 ms ±   2.9 ms    [User: 504.5 ms, System: 2.6 ms]
+    Range (min … max):   510.6 ms … 516.2 ms    3 runs
+
+
+  Benchmarking C
+  Benchmark 1: ./c/code 40
+    Time (mean ± σ):     514.0 ms ±   1.1 ms    [User: 505.6 ms, System: 2.8 ms]
+    Range (min … max):   513.2 ms … 515.2 ms    3 runs
+
+
+  Benchmarking Rust
+  Benchmark 1: ./rust/target/release/code 40
+    Time (mean ± σ):     514.1 ms ±   2.0 ms    [User: 504.6 ms, System: 3.1 ms]
+    Range (min … max):   512.4 ms … 516.3 ms    3 runs
+
+  ...
   ```
 
 4. For good measure, execute `$ bash ../clean.sh` when finished.
