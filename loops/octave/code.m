@@ -1,22 +1,17 @@
 function code()
-    % Get an input number from the command line
-    u = str2double(argv(){1});  % Convert input to double
+    args = argv();  % Parse input arguments
+    u = str2double(args{1});  % Convert first input argument to double
 
-    % Generate a random number between 0 and 10000
-    r = randi([0, 9999]);
+    r = randi([0, 10000]);  % Get a random number 0 <= r < 10k
 
-    % Initialize an array of 10k elements to 0
-    a = zeros(1, 10000);
+    mod_array = mod(0:99999, u);  % Calculate j % u
+    inner_sum = sum(mod_array);  % Sum the values
 
-    % Perform the nested loop operation
-    for i = 1:10000  % 10k outer loop iterations
-        for j = 0:99999  % 100k inner loop iterations, per outer loop iteration
-            a(i) = a(i) + mod(j, u);  % Simple sum and mod operation
-        end
-        a(i) = a(i) + r;  % Add a random value to each element in array
-    end
+    a = repmat(inner_sum, 1, 10000);  % Initialize array of 10k elements to inner_sum
 
-    disp(a(r + 1));  %  Print out a single element from the array
+    a = a + r; % Add the random value to each element
+
+    disp(a(r+1));  % display result (add +1 to maintain same behavior as Python)
 end
 
 code();
