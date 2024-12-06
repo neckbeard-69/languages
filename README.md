@@ -11,8 +11,8 @@ If you want to add a language: PR!
 To run one of the benchmarks:
 
 1. `cd` into desired benchmark directory (EG `$ cd loops`)
-2. Compile by running `$ bash ../compile.sh`
-3. Run via `$ bash ../run.sh`.
+2. Compile by running `$ ../compile.sh`
+3. Run via `$ ../run.sh`.
   You should see output something like:
   
   ```
@@ -38,11 +38,7 @@ To run one of the benchmarks:
   ...
   ```
 
-4. For good measure, execute `$ bash ../clean.sh` when finished.
-
-### Interpretation
-
-The numbers represent the real execution time (wall-clock time) it took for each language to execute the given task. **A lower number indicates better performance.**
+4. For good measure, execute `$ ../clean.sh` when finished.
 
 `bash ../run.sh` runs each program three times using the `runOnce` function and `awk` captures the real execution time.
 
