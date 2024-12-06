@@ -34,3 +34,4 @@ v -prod -cc clang -d no_backtrace -gc none -o v/code v/code.v
 emojicodec emojicode/code.emojic
 echo '(compile-program "chez/code.ss")' | chez --optimize-level 3 -q
 (cd clojure && mkdir -p classes && clojure -Sdeps '{:paths ["."]}' -M -e "(compile 'code)")
+cobc -I /opt/homebrew/include/ -O -O2 -O3 -Os -x -o cobol/main cobol/main.cbl
