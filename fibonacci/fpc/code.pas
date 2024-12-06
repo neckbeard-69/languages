@@ -5,8 +5,12 @@ uses
 
 function Fibonacci(n: UInt32): UInt32; inline;
 begin
-  if n <= 1 then exit(n);
-  Fibonacci := Fibonacci(n - 1) + Fibonacci(n - 2);
+  if n = 0 then
+    Fibonacci := 0
+  else if n = 1 then
+    Fibonacci := 1
+  else
+    Fibonacci := Fibonacci(n - 1) + Fibonacci(n - 2);
 end;
 
 var
