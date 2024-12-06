@@ -19,4 +19,4 @@ function code()
     disp(a(r + 1));  %  Print out a single element from the array
 end
 
-main();
+code();

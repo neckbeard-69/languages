@@ -1,4 +1,4 @@
-function main()
+function code()
     args = argv();  % Command-line arguments in Octave/Matlab
     u = str2double(args{1});  % Convert the first input argument to a double
 
@@ -22,4 +22,4 @@ function result = fibonacci(n)
     end
 end
 
-main();
+code();
