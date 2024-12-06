@@ -6,7 +6,8 @@ function run {
 
 run "Dart" "./dart/code 40"
 run "Objective-C" "./objc/code 40"
-run "Kotlin" "java -jar kotlin/code.jar 40"
+run "Kotlin JVM" "java -jar kotlin/code.jar 40"
+run "Kotlin Native" "./kotlin/code.kexe 40"
 run "C" "./c/code 40"
 run "Rust" "./rust/target/release/code 40"
 run "Node" "node ./js/code.js 40" 
