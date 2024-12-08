@@ -1,3 +1,4 @@
+
 clang -O3 c/code.c -o c/code
 clang++ -std=c++23 -march=native -O3 -Ofast -o cpp/code cpp/code.cpp
 go build -ldflags "-s -w" -o go/code go/code.go
@@ -31,6 +32,7 @@ emojicodec emojicode/code.emojic
 echo '(compile-program "chez/code.ss")' | chez --optimize-level 3 -q
 (cd clojure && mkdir -p classes && clojure -Sdeps '{:paths ["."]}' -M -e "(compile 'code)")
 cobc -I /opt/homebrew/include/ -O -O2 -O3 -Os -x -o cobol/main cobol/main.cbl
+lake build --dir lean4 
 #dotnet publish fsharp -o fsharp/code-aot /p:PublishAot=true /p:OptimizationPreference=Speed
 # haxe --class-path haxe -main Code --jvm haxe/code.jar # was getting errors running `haxelib install hxjava`
 #dotnet publish csharp -o csharp/code-aot /p:PublishAot=true /p:OptimizationPreference=Speed
