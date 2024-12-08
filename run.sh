@@ -1,7 +1,9 @@
 function run {
-  echo ""
-  echo "Benchmarking $1"
-  hyperfine -i --shell=none --runs 3 --warmup 2 "$2"
+  if [ -f $2 ]; then
+    echo ""
+    echo "Benchmarking $1"
+    hyperfine -i --shell=none --runs 3 --warmup 2 "$2"
+  fi
 }
 
 run "Zig" "./zig/code 40"
