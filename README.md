@@ -1,4 +1,3 @@
-https://benjdd.com/languages/ and https://benjdd.com/languages2/
 
 # Languages
 
@@ -40,7 +39,7 @@ To run one of the benchmarks:
 
 4. For good measure, execute `$ ../clean.sh` when finished.
 
-`bash ../run.sh` runs each program three times using the `runOnce` function and `awk` captures the real execution time.
+Hyperfine is used to warm, execute, and time the runs of the programs.
 
 ## Adding
 
@@ -56,10 +55,30 @@ You are also welcome to add new top-level benchmarks dirs
 
 # Available Benchmarks
 
+Each benchmark exists in a subdirectory with the corresponding name.
+
 ## loops
 
-Emphasizes loop, conditional, and basic math performance.
+A simple, not-super-useful program that does a total of 1 billion loop iterations, with some addition and mod operations for each.
+The idea with this is to emphasizes loop, conditional, and basic math performance.
 
 ## fibonacci
 
-Emphasizes function call overhead and recursion.
+This program computes the sum of the first N fibonacci numbers.
+Each fibonacci number is computed using a naive recursive solution.
+Submissions using faster tail-recursion or iterative solutions will not not be accepted.
+Emphasizes function call overhead, stack pushing / popping, and recursion.
+
+## levenshtein
+
+This program computes the levenshtein distance between all of the strings provided on the command line.
+It prints out the total number of strings compared for distance, and the lowest distance score of all comparisons.
+This program emphasizes array/string access and basic looping and conditionals.
+
+# Corresponding visuals
+
+Several visuals have been published based on the work here.
+More will likely be added in the future, as this repository improves:
+
+- https://benjdd.com/languages
+- https://benjdd.com/languages2
