@@ -55,18 +55,13 @@ You are also welcome to add new top-level benchmarks dirs
 
 # Available Benchmarks
 
-Each benchmark exists in a subdirectory with the corresponding name.
+Each benchmark exists in a subdirectory with the corresponding name:
 
 ### [loops](./loops/README.md)
 
 ### [fibonacci](./fibonacci/README.md)
 
-
-## levenshtein
-
-This program computes the levenshtein distance between all of the strings provided on the command line.
-It prints out the total number of strings compared for distance, and the lowest distance score of all comparisons.
-This program emphasizes array/string access and basic looping and conditionals.
+### [levenshtein](./levenshtein/README.md)
 
 # Corresponding visuals
 

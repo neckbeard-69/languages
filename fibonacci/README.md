@@ -6,7 +6,7 @@ Submissions using faster tail-recursion or iterative solutions will not not be a
 Emphasizes function call overhead, stack pushing / popping, and recursion.
 
 Below is the reference C program.
-All languages must do the same array work and computations outlined here.
+All languages must do the equivalent amount of work and meet these requirements:
 
 ```C
 #include "stdio.h"
