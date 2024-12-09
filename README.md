@@ -57,10 +57,8 @@ You are also welcome to add new top-level benchmarks dirs
 
 Each benchmark exists in a subdirectory with the corresponding name.
 
-## loops
+## [loops](./loops/README.md)
 
-A simple, not-super-useful program that does a total of 1 billion loop iterations, with some addition and mod operations for each.
-The idea with this is to emphasizes loop, conditional, and basic math performance.
 
 ## fibonacci
 
