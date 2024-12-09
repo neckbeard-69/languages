@@ -57,15 +57,10 @@ You are also welcome to add new top-level benchmarks dirs
 
 Each benchmark exists in a subdirectory with the corresponding name.
 
-## [loops](./loops/README.md)
+### [loops](./loops/README.md)
 
+### [fibonacci](./fibonacci/README.md)
 
-## fibonacci
-
-This program computes the sum of the first N fibonacci numbers.
-Each fibonacci number is computed using a naive recursive solution.
-Submissions using faster tail-recursion or iterative solutions will not not be accepted.
-Emphasizes function call overhead, stack pushing / popping, and recursion.
 
 ## levenshtein
 
