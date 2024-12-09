@@ -7,13 +7,13 @@ This program emphasizes array/string access and basic looping and conditionals.
 Below is the reference C program.
 All languages must do the equivalent amount of work and meet these requirements:
 
-```
+```C
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-                                                       // ALL IMPLEMENTATIONS MUST...
-int min(int a, int b, int c) {                         // Have a function for calculating min
-  int min = a;                                         // If the language has a builtin or standard library min that supports 3+ inputs, that may be used as an alternative.
+                                // ALL IMPLEMENTATIONS MUST...
+int min(int a, int b, int c) {  // Have a function for calculating min
+  int min = a;                  // If the language has a builtin or standard library min that supports 3+ inputs, that may be used as an alternative.
   if (b < min) min = b;
   if (c < min) min = c;
   return min;
