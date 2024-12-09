@@ -1,5 +1,6 @@
-with Ada.Text_IO;      use Ada.Text_IO;
-with Ada.Command_Line; use Ada.Command_Line;
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Command_Line;    use Ada.Command_Line;
 
 procedure Code is
    type Matrix_Type is array (Natural range <>, Natural range <>) of Integer;
@@ -8,23 +9,12 @@ procedure Code is
    Times        : Natural := 0;
    Distance     : Integer := 0;
 
-   procedure Print_Matrix (M : Matrix_Type) is
-   begin
-      for I in M'Range (1) loop
-         for J in M'Range (2) loop
-            Put (M (I, J)'Image & " ");
-         end loop;
-         New_Line;
-      end loop;
-      New_Line;
-   end Print_Matrix;
-
    ---------
    -- Min --
    ---------
 
-   function Min (A, B, C : Integer) return Integer is
-      Min : Integer := A;
+   function Min (A, B, C : Natural) return Natural is
+      Min : Natural := A;
    begin
       if B < Min then
          Min := B;
@@ -41,29 +31,27 @@ procedure Code is
    -- Levenshtein --
    -----------------
 
-   function Levenshtein (Str1 : in String; Str2 : in String) return Integer is
-      M : Integer := Str1'Length;
-      N : Integer := Str1'Length;
+   function Levenshtein_Distance
+     (Str1 : in String; Str2 : in String) return Natural
+   is
+      M : Natural := Str1'Length;
+      N : Natural := Str2'Length;
 
       Matrix : Matrix_Type (0 .. M + 1, 0 .. N + 1) :=
         (others => (others => 0));
 
-      Cost : Integer := 0;
+      Cost : Natural := 0;
    begin
-      for I in Matrix'Range (1) loop
+      for I in Matrix'Range(1) loop
          Matrix (I, 0) := I;
       end loop;
 
-      Print_Matrix (Matrix);
-
-      for J in Matrix'Range (2) loop
+      for J in Matrix'Range(2) loop
          Matrix (0, J) := J;
       end loop;
 
-      Print_Matrix (Matrix);
-
       for I in 1 .. M loop
-         for J in 1 .. M loop
+         for J in 1 .. N loop
 
             if Str1 (I) = Str2 (J) then
                Cost := 0;
@@ -73,22 +61,21 @@ procedure Code is
 
             Matrix (I, J) :=
               Min
-                (Matrix (I - 1, J) + 1, Matrix (I, J - 1) + 1,
+                (Matrix (I - 1, J) + 1,
+                 Matrix (I, J - 1) + 1,
                  Matrix (I - 1, J - 1) + Cost);
          end loop;
       end loop;
 
-      Print_Matrix (Matrix);
-
       return Matrix (M, N);
-   end Levenshtein;
+   end Levenshtein_Distance;
 
 begin
    for I in 1 .. Argument_Count loop
       for J in 1 .. Argument_Count loop
 
          if I /= J then
-            Distance := Levenshtein (Argument (I), Argument (J));
+            Distance := Levenshtein_Distance (Argument (I), Argument (J));
 
             if (Min_Distance = -1) or (Min_Distance > Distance) then
                Min_Distance := Distance;
@@ -99,7 +86,11 @@ begin
       end loop;
    end loop;
 
-   Put_Line ("times: " & Times'Image);
-   Put_Line ("min_distance: " & Min_Distance'Image);
+   Put ("times: ");
+   Put (Item => Times, Width => 1);
+   New_Line;
+   Put ("min_distance: ");
+   Put (Item => Min_Distance, Width => 1);
+   New_Line;
 
 end Code;
