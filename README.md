@@ -55,8 +55,6 @@ You are also welcome to add new top-level benchmarks dirs
 
 # Available Benchmarks
 
-Each benchmark exists in a subdirectory with the corresponding name:
-
 ### [loops](./loops/README.md)
 
 ### [fibonacci](./fibonacci/README.md)
