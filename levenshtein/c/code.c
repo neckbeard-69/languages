@@ -15,10 +15,7 @@ int levenshtein_distance(const char *str1, const char *str2) {
   int n = strlen(str2);
   
   // Create a matrix to store distances
-  int **matrix = malloc((m + 1) * sizeof(int *));
-  for (int i = 0; i <= m; i++) {
-    matrix[i] = malloc((n + 1) * sizeof(int));
-  }
+  int matrix[m+1][n+1];
   
   // Initialize first row and column
   for (int i = 0; i <= m; i++) {
@@ -40,17 +37,7 @@ int levenshtein_distance(const char *str1, const char *str2) {
     }
   }
   
-  // Store the final distance
-  int distance = matrix[m][n];
-  
-  // Free the allocated memory
-  // This could be faster without malloc :)
-  for (int i = 0; i <= m; i++) {
-    free(matrix[i]);
-  }
-  free(matrix);
-  
-  return distance;
+  return matrix[m][n];
 }
 
 int main(int argc, char *argv[]) {

@@ -28,12 +28,7 @@ int levenshtein(const char *str1, const char *str2) {  // A function that takes 
     matrix[i] = malloc((n + 1) * sizeof(int));
   }
   
-  for (int i = 0; i <= m; i++) {                       // Matrix initialization step to generate first row and column.
-    matrix[i][0] = i;
-  }
-  for (int j = 0; j <= n; j++) {
-    matrix[0][j] = j;
-  }
+  int matrix[m+1][n+1];                                // Matrix initialization step to generate first row and column.
  
   for (int i = 1; i <= m; i++) {                       // Entire levenshtein matrix must be populated
     for (int j = 1; j <= n; j++) {                     // Using standard / naive levenshtein algorithm
@@ -44,12 +39,11 @@ int levenshtein(const char *str1, const char *str2) {  // A function that takes 
     }
   }
   
-  int distance = matrix[m][n];                         // The matrix must be cleaned up.
-  for (int i = 0; i <= m; i++) {                       // For a heap allocation this means some form of cleanup
-    free(matrix[i]);                                   // If stack was used, should just clean up when returning
-  }
-  free(matrix);
-  return distance;                                     // Return distance
+  // The matrix must be cleaned up.
+  // For a heap allocation this means some form of cleanup
+  // For example, in C, call(s) to free()
+  // If stack was used, should just clean up when returning
+  return matrix[m][n];
 }
 
 int main(int argc, char *argv[]) {                     // Program accepts any number of string inputs on the command line
