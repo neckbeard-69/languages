@@ -1,6 +1,6 @@
 # Levenshtein
 
-This program computes the levenshtein distance between all of the strings provided on the command line.
+This program computes the [levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between all of the strings provided on the command line.
 It prints out the total number of strings compared for distance, and the lowest distance score of all comparisons.
 This program emphasizes array/string access and basic looping and conditionals.
 
