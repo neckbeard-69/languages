@@ -23,12 +23,14 @@ int levenshtein(const char *str1, const char *str2) {  // A function that takes 
   int m = strlen(str1);                                // The lengths of the two strings must be ascertained somehow
   int n = strlen(str2);
   
-  int **matrix = malloc((m + 1) * sizeof(int *));      // A MxN matrix must be allocated. Either stack or heap is acceptable.
-  for (int i = 0; i <= m; i++) {
-    matrix[i] = malloc((n + 1) * sizeof(int));
-  }
+  int matrix[m+1][n+1];                                // A MxN matrix must be allocated. Either stack or heap is acceptable.
   
-  int matrix[m+1][n+1];                                // Matrix initialization step to generate first row and column.
+  for (int i = 0; i <= m; i++) {                       // Matrix initialization step to generate first row and column.
+    matrix[i][0] = i;
+  }
+  for (int j = 0; j <= n; j++) {
+    matrix[0][j] = j;
+  }
  
   for (int i = 1; i <= m; i++) {                       // Entire levenshtein matrix must be populated
     for (int j = 1; j <= n; j++) {                     // Using standard / naive levenshtein algorithm
