@@ -2,6 +2,7 @@
 
 This program computes the [levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between all of the strings provided on the command line.
 It prints out the total number of strings compared for distance, and the lowest distance score of all comparisons.
+All implementations must use the [Wagner-Fischer algorithm](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm).
 This program emphasizes array/string access and basic looping and conditionals.
 
 Below is the reference C program.
