@@ -3,5 +3,6 @@ code
 .idea/
 *.user
 *.o
+*.ali
 .aider*
 .env
