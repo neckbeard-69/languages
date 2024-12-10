@@ -56,7 +56,7 @@ run "MAWK" "mawk -f" "./awk/code.awk"
 run "Clojure" "java -cp clojure/classes:$(clojure -Spath)" "./clojure/code"
 run "Babashka" "bb -cp clojure -m" "./babashka/code"
 run "COBOL" "" "./cobol/main"
-
+run "Octave" "octave ./octave/code.m 40"
 #run "F# AOT" "./fsharp/code-aot/code"
 #run "C# AOT" "./csharp/code-aot/code"
 #run "Haxe JVM" "java -jar haxe/code.jar" # was getting errors running `haxelib install hxjava`
