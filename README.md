@@ -1,4 +1,3 @@
-https://benjdd.com/languages/ and https://benjdd.com/languages2/
 
 # Languages
 
@@ -40,7 +39,7 @@ To run one of the benchmarks:
 
 4. For good measure, execute `$ ../clean.sh` when finished.
 
-`bash ../run.sh` runs each program three times using the `runOnce` function and `awk` captures the real execution time.
+Hyperfine is used to warm, execute, and time the runs of the programs.
 
 ## Adding
 
@@ -56,10 +55,16 @@ You are also welcome to add new top-level benchmarks dirs
 
 # Available Benchmarks
 
-## loops
+### [loops](./loops/README.md)
 
-Emphasizes loop, conditional, and basic math performance.
+### [fibonacci](./fibonacci/README.md)
 
-## fibonacci
+### [levenshtein](./levenshtein/README.md)
 
-Emphasizes function call overhead and recursion.
+# Corresponding visuals
+
+Several visuals have been published based on the work here.
+More will likely be added in the future, as this repository improves:
+
+- https://benjdd.com/languages
+- https://benjdd.com/languages2
