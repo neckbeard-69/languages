@@ -27,17 +27,4 @@ swiftc -O -parse-as-library -Xcc -funroll-loops -Xcc -march=native -Xcc -ftree-v
 dotnet publish csharp -o csharp/code
 dotnet publish fsharp -o fsharp/code
 ghc -O2 -fllvm haskell/code.hs -o haskell/code || { echo "ghc: cannot compile with llvm backend; fallback to use default backend"; ghc -O2 haskell/code.hs -o haskell/code; }
-<<<<<<< HEAD
 dotnet publish fsharp/fsharp.fsproj -o fsharp/code
-=======
-v -prod -cc clang -d no_backtrace -gc none -o v/code v/code.v
-emojicodec emojicode/code.emojic
-echo '(compile-program "chez/code.ss")' | chez --optimize-level 3 -q
-(cd clojure && mkdir -p classes && clojure -Sdeps '{:paths ["."]}' -M -e "(compile 'code)")
-cobc -I /opt/homebrew/include/ -O -O2 -O3 -Os -x -o cobol/main cobol/main.cbl
-lake build --dir lean4 
-#dotnet publish fsharp -o fsharp/code-aot /p:PublishAot=true /p:OptimizationPreference=Speed
-# haxe --class-path haxe -main Code --jvm haxe/code.jar # was getting errors running `haxelib install hxjava`
-#dotnet publish csharp -o csharp/code-aot /p:PublishAot=true /p:OptimizationPreference=Speed
-#gnatmake -O3 -gnat2022 -gnatp -flto ada/code.adb -D ada -o ada/code
->>>>>>> 34c6d12a4246ff1037cfaec1b1b82c4610daceb1

@@ -26,12 +26,4 @@ rm -rf csharp/code
 rm -rf fsharp/code-aot
 rm -rf fsharp/code
 rm haskell/code haskell/*.hi haskell/*.o
-<<<<<<< HEAD
 rm -rf fsharp/bin/ fsharp/obj/ fsharp/code
-=======
-rm v/code
-rm emojicode/code emojicode/code.o
-rm -f chez/code.so
-rm -rf clojure/classes clojure/.cpcache
-rm cobol/main
->>>>>>> 34c6d12a4246ff1037cfaec1b1b82c4610daceb1
