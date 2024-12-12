@@ -30,7 +30,7 @@ int levenshtein(const string_view &str1, const string_view &str2) {
   return matrix[m][n];
 }
 
-int main(int argc, char *argv[1]) {
+int main(int argc, char *argv[]) {
   int min_distance = -1;
   int times = 0;
   for (int i = 1; i < argc; i++) {
