@@ -1,11 +1,11 @@
 #include <algorithm>
 #include <iostream>
-#include <string>
+#include <string_view>
 #include <vector>
 
 using namespace std;
 
-int levenshtein(const string &str1, const string &str2) {
+int levenshtein(const string_view &str1, const string_view &str2) {
   int n = str1.size();
   int m = str2.size();
 
