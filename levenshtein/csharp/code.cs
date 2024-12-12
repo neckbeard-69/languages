@@ -1,8 +1,8 @@
 ﻿int min_distance = -1;
 int times = 0;
-for (int i = 1; i < args.Length; i++)
+for (int i = 0; i < args.Length; i++)
 {
-    for (int j = 1; j < args.Length; j++)
+    for (int j = 0; j < args.Length; j++)
     {
         if (i != j)
         {
