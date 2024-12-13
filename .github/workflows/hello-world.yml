@@ -38,11 +38,6 @@ jobs:
           bb: latest
           no-auth: ${{ env.LOCAL == 'true' }}
 
-      - name: Set up kotlin
-        uses: fwilhe2/setup-kotlin@main
-        with:
-          install-native: true
-
       - name: Setup Fortran
         uses: fortran-lang/setup-fortran@v1
         id: setup-fortran
