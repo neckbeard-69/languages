@@ -1,10 +1,3 @@
-function min(a, b, c) {
-  let minVal = a;
-  if (b < minVal) minVal = b;
-  if (c < minVal) minVal = c;
-  return minVal;
-}
-
 function levenshteinDistance(str1, str2) {
   const m = str1.length;
   const n = str2.length;
@@ -22,7 +15,7 @@ function levenshteinDistance(str1, str2) {
   for (let i = 1; i <= m; i++) {
     for (let j = 1; j <= n; j++) {
       const cost = (str1[i-1] === str2[j-1]) ? 0 : 1;
-      matrix[i][j] = min(
+      matrix[i][j] = Math.min(
         matrix[i-1][j] + 1,      // Deletion
         matrix[i][j-1] + 1,      // Insertion
         matrix[i-1][j-1] + cost  // Substitution
