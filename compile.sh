@@ -43,6 +43,7 @@ compile 'v' 'v -prod -cc clang -d no_backtrace -gc none -o v/code v/code.v'
 compile 'emojicode' 'emojicodec emojicode/code.emojic'
 compile 'chez' "echo '(compile-program \"chez/code.ss\")' | chez --optimize-level 3 -q"
 compile 'clojure' "(cd clojure && mkdir -p classes && clojure -Sdeps '{:paths [\".\"]}' -M -e \"(compile 'code)\")"
+compile 'clojure-native-image' "(cd clojure-native-image && clojure -M:native-image)"
 compile 'cobol' 'cobc -I /opt/homebrew/include/ -O -O2 -O3 -Os -x -o cobol/main cobol/main.cbl'
 compile 'lean4' 'lake build --dir lean4 '
 # compile 'fsharp' 'dotnet publish fsharp -o fsharp/code-aot /p:PublishAot=true /p:OptimizationPreference=Speed'
