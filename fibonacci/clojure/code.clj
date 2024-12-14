@@ -12,9 +12,5 @@
 
 (defn -main [& args]
   (let [u (long (parse-long (first args)))
-        r (loop [i 1
-                 sum 0]
-            (if (< i u)
-              (recur (inc i) (+ sum (long (fibonacci i))))
-              sum))]
+        r (transduce (map fibonacci) + (range u))]
     (println r)))
