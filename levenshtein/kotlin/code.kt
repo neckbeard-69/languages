@@ -63,10 +63,9 @@ fun levenshteinDistance(str1: String, str2: String): Int {
             )
         }
 
-        // Swap rows
-        val temp = prevRow
-        prevRow = currRow
-        currRow = temp
+        for (k in 0..m) {
+            prevRow[k] = currRow[k].also { currRow[k] = prevRow[k] }
+        }
     }
 
     return prevRow[m]
@@ -85,10 +84,12 @@ fun main(args: Array<String>) {
     var comparisons = 0
 
     for (i in args.indices) {
-        for (j in i + 1 until args.size) {
-            val distance = levenshteinDistance(args[i], args[j])
-            minDistance = minOf(minDistance, distance)
-            comparisons++
+        for (j in args.indices) {
+            if (i != j) {
+                val distance = levenshteinDistance(args[i], args[j])
+                minDistance = minOf(minDistance, distance)
+                comparisons++
+            }
         }
     }
 
