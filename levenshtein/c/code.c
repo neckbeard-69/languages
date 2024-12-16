@@ -15,8 +15,8 @@ int levenshtein_distance(const char *str1t, const char *str2t) {
   int nt = strlen(str2t);
   const char* str1 = mt <= nt ? str1t : str2t;
   const char* str2 = mt <= nt ? str2t : str1t;
-  int m = strlen(str1);
-  int n = strlen(str2);
+  int m = str1 == str1t ? mt : nt;
+  int n = str1 == str1t ? nt : mt;
   
   int prev[m+1];
   int curr[m+1];
@@ -32,7 +32,7 @@ int levenshtein_distance(const char *str1t, const char *str2t) {
       int cost = (str1[j-1] == str2[i-1]) ? 0 : 1;
       curr[j] = min(
         prev[j] + 1,      // Deletion
-        curr[j-1] + 1,      // Insertion
+        curr[j-1] + 1,    // Insertion
         prev[j-1] + cost  // Substitution
       );
     }
