@@ -79,12 +79,14 @@ func main() {
 	}
 
 	for i := 0; i < len(args); i++ {
-		for j := i + 1; j < len(args); j++ {
-			d := levenshtein(args[i], args[j])
-			if minD == -1 || d < minD {
-				minD = d
-			}
-			times++
+		for j := 0; j < len(args); j++ {
+			if  i != j {
+        d := levenshtein(args[i], args[j])
+        if minD == -1 || d < minD {
+          minD = d
+        }
+        times++
+      }
 		}
 	}
 
