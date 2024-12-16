@@ -90,5 +90,5 @@ fn main() {
     }
 
     println!("times: {}", times);
-    println!("min_distance: {}", min_distance.unwrap_or(-1));
+    println!("min_distance: {}", min_distance.unwrap_or(usize::MAX));
 }
