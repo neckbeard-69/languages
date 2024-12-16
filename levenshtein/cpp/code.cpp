@@ -100,11 +100,13 @@ int main(int argc, char* argv[]) {
 
     // Optimize loop to avoid redundant comparisons (i,j) vs (j,i)
     // since Levenshtein distance is symmetric
-    for (int i = 1; i < argc - 1; ++i) {
-        for (int j = i + 1; j < argc; ++j) {
-            const int distance = levenshtein(argv[i], argv[j]);
-            min_distance = min(min_distance, distance);
-            ++comparisons;
+    for (int i = 1; i < argc; ++i) {
+        for (int j = 1; j < argc; ++j) {
+            if (i != j) {
+                const int distance = levenshtein(argv[i], argv[j]);
+                min_distance = min(min_distance, distance);
+                ++comparisons;
+            }
         }
     }
 

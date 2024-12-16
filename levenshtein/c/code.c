@@ -10,43 +10,47 @@ int min(int a, int b, int c) {
 }
 
 // Compute Levenshtein distance between two strings
-int levenshtein_distance(const char *str1, const char *str2) {
+int levenshtein_distance(const char *str1t, const char *str2t) {
+  int mt = strlen(str1t);
+  int nt = strlen(str2t);
+  const char* str1 = mt <= nt ? str1t : str2t;
+  const char* str2 = mt <= nt ? str2t : str1t;
   int m = strlen(str1);
   int n = strlen(str2);
   
-  // Create a matrix to store distances
-  int matrix[m+1][n+1];
+  int prev[m+1];
+  int curr[m+1];
   
-  // Initialize first row and column
   for (int i = 0; i <= m; i++) {
-    matrix[i][0] = i;
-  }
-  for (int j = 0; j <= n; j++) {
-    matrix[0][j] = j;
+    prev[i] = i;
   }
  
   // Compute Levenshtein distance
-  for (int i = 1; i <= m; i++) {
-    for (int j = 1; j <= n; j++) {
-      int cost = (str1[i-1] == str2[j-1]) ? 0 : 1;
-      matrix[i][j] = min(
-        matrix[i-1][j] + 1,      // Deletion
-        matrix[i][j-1] + 1,      // Insertion
-        matrix[i-1][j-1] + cost  // Substitution
+  for (int i = 1; i <= n; i++) {
+    curr[0] = i;
+    for (int j = 1; j <= m; j++) {
+      int cost = (str1[j-1] == str2[i-1]) ? 0 : 1;
+      curr[j] = min(
+        prev[j] + 1,      // Deletion
+        curr[j-1] + 1,      // Insertion
+        prev[j-1] + cost  // Substitution
       );
+    }
+    for (int j = 0; j <= m; j++) {
+      prev[j] = curr[j];
     }
   }
   
-  return matrix[m][n];
+  return prev[m];
 }
 
 int main(int argc, char *argv[]) {
   int min_distance = -1;
   int times = 0;
-  for (int i = 0; i < argc-1; i++) {
-    for (int j = 0; j < argc-1; j++) {
+  for (int i = 1; i < argc; i++) {
+    for (int j = 1; j < argc; j++) {
       if (i != j) {
-        int distance = levenshtein_distance(argv[i+1], argv[j+1]);
+        int distance = levenshtein_distance(argv[i], argv[j]);
         if (min_distance == -1 || min_distance > distance) {
           min_distance = distance;
         }
