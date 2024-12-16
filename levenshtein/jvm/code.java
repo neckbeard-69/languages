@@ -4,7 +4,7 @@ package jvm;
  * This class implements the Levenshtein distance algorithm and provides functionality
  * to find the minimum edit distance between pairs of strings.
  */
-public class Code {
+public class code {
 
     /**
      * Calculates the Levenshtein distance between two strings using an optimized
@@ -73,11 +73,13 @@ public class Code {
         int comparisons = 0;
 
         // Optimize loop to avoid redundant comparisons (i,j) vs (j,i)
-        for (int i = 0; i < args.length - 1; i++) {
-            for (int j = i + 1; j < args.length; j++) {
-                long distance = levenshteinDistance(args[i], args[j]);
-                minDistance = Math.min(minDistance, distance);
-                comparisons++;
+        for (int i = 0; i < args.length; i++) {
+            for (int j = 0; j < args.length; j++) {
+                if (i != j) {
+                    long distance = levenshteinDistance(args[i], args[j]);
+                    minDistance = Math.min(minDistance, distance);
+                    comparisons++;
+                }
             }
         }
 
