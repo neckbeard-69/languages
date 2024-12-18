@@ -4,6 +4,11 @@ const std = @import("std");
 /// Space Complexity: O(min(m,n)) - only uses two arrays instead of full matrix
 /// Time Complexity: O(m*n) where m and n are the lengths of the input strings
 fn levenshteinDistance(s1: []const u8, s2: []const u8) usize {
+    // Early termination checks
+    if (std.mem.eql(u8, s1, s2)) return 0;
+    if (s1.len == 0) return s2.len;
+    if (s2.len == 0) return s1.len;
+
     // Make s1 the shorter string for space optimization
     const str1 = if (s1.len > s2.len) s2 else s1;
     const str2 = if (s1.len > s2.len) s1 else s2;
