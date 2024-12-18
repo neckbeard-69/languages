@@ -7,7 +7,7 @@ function run {
   fi
 }
 
-function runExtra {
+function run_extra_parameter {
   if [ -f ${4} ]; then
     echo ""
     echo "Benchmarking $1"
@@ -16,7 +16,7 @@ function runExtra {
   fi
 }
 
-runExtra "Java" "java" "jvm/code" "jvm/code.class"
+run_extra_parameter "Java" "java" "jvm/code" "jvm/code.class"
 run "Go" "" "./go/code"
 run "Zig" "" "./zig/code"
 run "C" "" "./c/code"
