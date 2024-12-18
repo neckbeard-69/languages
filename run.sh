@@ -3,7 +3,7 @@ function run {
     echo ""
     echo "Benchmarking $1"
     input=`cat input.txt`
-    hyperfine -i --shell=none --runs 3 --warmup 2 "${2} ${3} ${input}" | sed 's/\(.\{80\}\).*/\1.../'
+    hyperfine -i --shell=none --runs 7 --warmup 2 "${2} ${3} ${input}" | sed 's/\(.\{80\}\).*/\1.../'
   fi
 }
 
@@ -12,7 +12,7 @@ function run_extra_parameter {
     echo ""
     echo "Benchmarking $1"
     input=`cat input.txt`
-    hyperfine -i --shell=none --runs 3 --warmup 2 "${2} ${3} ${input}" | sed 's/\(.\{80\}\).*/\1.../'
+    hyperfine -i --shell=none --runs 7 --warmup 2 "${2} ${3} ${input}" | sed 's/\(.\{80\}\).*/\1.../'
   fi
 }
 
