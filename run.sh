@@ -1,5 +1,5 @@
 function run {
-  if [ -f ${3} ]; then
+  if [ -f ${3} ] || [ -f ${4} ]; then
     echo ""
     echo "Benchmarking $1"
     input=`cat input.txt`
@@ -7,6 +7,8 @@ function run {
   fi
 }
 
+run "Java" "java" "jvm/code" "jvm/code.class"
+run "Go" "" "./go/code"
 run "Zig" "" "./zig/code"
 run "C" "" "./c/code"
 run "Rust" "" "./rust/target/release/code"
@@ -24,8 +26,6 @@ run "Deno (jitless)" "deno --v8-flags=--jitless" "./js/code.js"
 run "Deno" "deno" "./js/code.js"
 run "PyPy" "pypy" "./py/code.py"
 run "CPP" "" "./cpp/code"
-run "Go" "" "./go/code"
-run "Java" "java" "jvm/code"
 run "Scala" "" "./scala/code"
 run "Scala-Native" "" "./scala/code-native"
 run "PHP JIT" "php -dopcache.enable_cli=1 -dopcache.jit=on -dopcache.jit_buffer_size=64M" "./php/code.php"
