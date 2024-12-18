@@ -1,5 +1,5 @@
 function run {
-  if [ -f ${3} ] || [ -f ${4} ]; then
+  if [ -f ${3} ]; then
     echo ""
     echo "Benchmarking $1"
     input=`cat input.txt`
@@ -7,7 +7,16 @@ function run {
   fi
 }
 
-run "Java" "java" "jvm/code" "jvm/code.class"
+function runExtra {
+  if [ -f ${4} ]; then
+    echo ""
+    echo "Benchmarking $1"
+    input=`cat input.txt`
+    hyperfine -i --shell=none --runs 3 --warmup 2 "${2} ${3} ${input}" | sed 's/\(.\{80\}\).*/\1.../'
+  fi
+}
+
+runExtra "Java" "java" "jvm/code" "jvm/code.class"
 run "Go" "" "./go/code"
 run "Zig" "" "./zig/code"
 run "C" "" "./c/code"
